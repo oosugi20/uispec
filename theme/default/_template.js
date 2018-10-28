@@ -162,9 +162,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	document.querySelector( 'a[data-UISP-tool="editor"]').addEventListener( 'click', function ( e ) {
 
-		var baseUrl = e.target.getAttribute('href');
+		var href = e.target.getAttribute('href');
 		e.preventDefault();
-		window.open( baseUrl + `?src=${ captureSrc }`, 'EDT-Editor' );
+		window.open( href, 'EDT-Editor' );
 
 	} );
 
