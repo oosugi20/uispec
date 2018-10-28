@@ -8,6 +8,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "commander": "^2.19.0",
     "del": "^3.0.0",
     "lodash": "^4.17.11",
     "marked": "^0.5.1",
@@ -16,6 +17,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "uispec": "bin/uispec.js"
   },
   "author": "Makoto OOSUGI <oosugi20@gmail.com>",
   "license": "ISC"
