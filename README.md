@@ -3,14 +3,24 @@
 ## Usage
 
 ```javascript
+const express = require('express');
 const uispec = require('uispec');
-const myUispec = uispec({
-  srcDir: 'uispec/',
-  serveDir: '/_uispec',
-  destDir: 'dest/uispec/'
-  themaDir: 'uispec-thema/'
-});
+const app = express();
+const port = process.env.PORT || 3000;
+const publicDir = 'public/';
 
+const uispecOptions = {
+  srcDir: 'src/uispec/',
+  serveDir: '/_uispec',
+  destDir: 'dest/uispec/',
+  themeDir: 'custom-theme/'
+};
+
+const myUispec = uispec(uispecOptions);
+
+app.use(express.static(publicDir));
+app.use(myUispec.serve());
+app.listen(port);
 ```
 
 ## API
@@ -18,11 +28,11 @@ const myUispec = uispec({
 `serve()`
 `generate()`
 `clean()`
-`watch()`
 
 
 ## Commands
 
+`uispec init`
+`uispec serve`
 `uispec generate`
-`uispec watch`
 `uispec clean`
