@@ -3,8 +3,21 @@
 <head>
 	<title>Filelist</title>
 	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
 		th, td {
 			border: 1px solid #999;
+			padding: 0.5rem 1rem;
+		}
+		thead th {
+			background-color: #ccc;
+		}
+		.indent {
+			display: inline-block;
+			width: 1rem;
 		}
 	</style>
 </head>
@@ -22,7 +35,12 @@
 	<tbody>
 		<% _.forEach(items, function (item) { %>
 			<tr>
-				<td><%- item.title %></td>
+				<td>
+					<% _.times(item.depth, function () { %>
+						<span class="indent"></span>
+					<% }); %>
+					<%- item.title %>
+				</td>
 				<td>
 					<a href="<%- item.url %>"><%- item.url %></a>
 				</td>
