@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filelist</title>
+	<style>
+		th, td {
+			border: 1px solid #999;
+		}
+	</style>
+</head>
+<body>
+
+<table>
+	<thead>
+		<tr>
+			<th>title</th>
+			<th>url</th>
+			<th>uispec</th>
+			<th>summary</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% _.forEach(items, function (item) { %>
+			<tr>
+				<td><%- item.title %></td>
+				<td>
+					<a href="<%- item.url %>"><%- item.url %></a>
+				</td>
+				<td>
+					<a href="<%- item.serveRelativePath %>">[view]</a>
+				</td>
+				<td>
+					<%- item.summary %>
+				</td>
+			</tr>
+		<% }); %>
+	</tbody>
+</table>
+
+</body>
+</html>
