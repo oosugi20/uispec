@@ -30,6 +30,7 @@
 			<th>url</th>
 			<th>uispec</th>
 			<th>summary</th>
+			<th>update</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -49,6 +50,9 @@
 				</td>
 				<td>
 					<%- item.summary %>
+				</td>
+				<td>
+					<%= item.updateHtml %>
 				</td>
 			</tr>
 		<% }); %>
