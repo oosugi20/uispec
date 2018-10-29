@@ -19,6 +19,9 @@
 			display: inline-block;
 			width: 1rem;
 		}
+		.is-index {
+			font-weight: bold;
+		}
 	</style>
 </head>
 <body>
@@ -36,7 +39,7 @@
 	<tbody>
 		<% _.forEach(items, function (item) { %>
 			<tr>
-				<td>
+				<td<% if (item.isIndex) { %> class="is-index"<% } %>>
 					<% _.times(item.depth, function () { %>
 						<span class="indent"></span>
 					<% }); %>
@@ -46,7 +49,9 @@
 					<a href="<%- item.url %>"><%- item.url %></a>
 				</td>
 				<td>
-					<a href="<%- item.serveRelativePath %>">[view]</a>
+					<% if (item.body) { %>
+						<a href="<%- item.serveRelativePath %>">[view]</a>
+					<% } %>
 				</td>
 				<td>
 					<%- item.summary %>
