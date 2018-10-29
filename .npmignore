@@ -1,0 +1,9 @@
+./lib/theme/default/src
+./lib/theme/default/package.json
+./lib/theme/default/package-lock.json
+./lib/theme/default/gulpfile.js
+
+./lib/editor/src
+./lib/editor/package.json
+./lib/editor/package-lock.json
+./lib/editor/gulpfile.js
