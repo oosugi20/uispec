@@ -1,5 +1,17 @@
 # uispec
 
+https://github.com/pxgrid/ui-spec-md を元に、
+
+- gulp依存を外した
+- cli用意した
+- serveできるように
+- template(theme)を自分でカスタマイズしたものを使えるように
+- filelistの自動生成追加
+
+などしたもの。
+
+現状、取り敢えず使える状態にまでなっているが、ほんとにざっくりという感じ。
+
 ## Usage
 
 ```javascript
@@ -23,7 +35,7 @@ app.use(myUispec.serve());
 app.listen(port);
 ```
 
-## API
+## APIs
 
 `serve()`
 `generate()`
