@@ -1304,7 +1304,7 @@ a {
   .UISP-Dot svg {
     display: block; }
   .UISP-Dot g.node polygon {
-    fill: transparent; }
+    fill: rgba(0, 0, 0, 0); }
   .UISP-Dot g.node a:hover {
     text-decoration: none; }
   .UISP-Dot g.node text {
