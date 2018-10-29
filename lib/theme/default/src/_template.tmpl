@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><%= title %></title>
-<link rel="stylesheet" href="<%= toRoot %>_template/_template.css">
-<script src="<%= toRoot %>_template/_template.js"></script>
+<link rel="stylesheet" href="<%= toRoot %>_template.css">
+<script src="<%= toRoot %>_template.js"></script>
 </head>
 <body>
 
@@ -14,7 +14,8 @@
 	<header class="UISP-Header">
 		<div class="UISP-Header__buttons">
 			<ul>
-				<li><button class="UISP-Header__button" data-uisp-button-type="menuToggler"><span class="UISP-Icon--bars"></span></button></li>
+				<!--li><button class="UISP-Header__button" data-uisp-button-type="menuToggler"><span class="UISP-Icon--bars"></span></button></li-->
+				<li><a class="UISP-Header__button" href="<%= toRoot %>_filelist.html"><span class="UISP-Icon--bars"></span></a></li>
 				<li><a class="UISP-Header__button" href="<%= toRoot %>index.html"><span class="UISP-Icon--home"></span></a></li>
 			</ul>
 		</div>
@@ -36,7 +37,7 @@
 							<li><button class="UISP-Doc__screenButton" data-UISP-tool="highlight">highlight</button></li>
 						</ul>
 						<ul>
-							<li><a class="UISP-Doc__screenButton" data-UISP-tool="editor" href="<%= toRoot %>_editor.html">Edit</a></li>
+							<li><a class="UISP-Doc__screenButton" data-UISP-tool="editor" href="<%= editorUrl %>">Edit</a></li>
 						</ul>
 					</div>
 					<div class="UISP-Doc__screenMain">
@@ -56,9 +57,9 @@
 		</div>
 		<% if ( !!svgCanvas ) { %><div class="UISP-Separator"></div><% } %>
 
-		<div class="UISP-Menu">
+		<!--div class="UISP-Menu">
 			<iframe src="<%= toRoot %>_menu.html"></iframe>
-		</div>
+		</div-->
 
 	</div>
 
