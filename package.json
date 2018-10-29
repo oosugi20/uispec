@@ -29,5 +29,5 @@
     "uispec": "bin/uispec.js"
   },
   "author": "Makoto OOSUGI <oosugi20@gmail.com>",
-  "license": "ISC"
+  "license": "MIT"
 }
