@@ -1,6 +1,6 @@
 {
   "name": "uispec",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "engines": {
     "node": "v8.9.0",
