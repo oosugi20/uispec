@@ -22,12 +22,16 @@
 		<div class="UISP-Header__title">
 			<%= title %>
 		</div>
-		<div class="UISP-Header__opener">
-			<a href="<%= url %>">[<%- url %>]</a>
-		</div>
-		<div class="UISP-Header__update">
-			update: <% if (update) { %><%= updateHtml %><% } %>
-		</div>
+		<% if (url) { %>
+			<div class="UISP-Header__opener">
+				<a href="<%= url %>">[<%- url %>]</a>
+			</div>
+		<% } %>
+		<% if (update) { %>
+			<div class="UISP-Header__update">
+				update: <%= updateHtml %>
+			</div>
+		<% } %>
 	</header>
 
 	<div class="UISP-Body">
