@@ -6,7 +6,14 @@ const helpers = require('../../lib/helpers');
 
 describe('helpers', () => {
   it('isExistFileを持つこと', () => {
-    const isExistFile = require('../../lib/helpers/isExistFile');
-    expect(helpers.isExistFile).to.equal(isExistFile);
+    expect(helpers).to.have.property('isExistFile');
+  });
+
+  it('splitUpMarkdownStringを持つこと', () => {
+    expect(helpers).to.have.property('splitUpMarkdownString');
+  });
+
+  it('readMarkdownFileを持つこと', () => {
+    expect(helpers).to.have.property('readMarkdownFile');
   });
 });
