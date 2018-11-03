@@ -17,7 +17,8 @@ hoge hoge hoge`;
 const testString = `${testMeta}
 ${testBody}`;
 
-const testFilePath = path.join(__dirname, '__testFileForReadMarkdownFile');
+const testFileName = '__testFileForReadMarkdownFile';
+const testFilePath = path.join(__dirname, testFileName);
 
 
 const stubSplitUpMarkdownString = sinon.stub();
@@ -44,6 +45,27 @@ describe('readMarkdownFile', () => {
     expect(data.summary).to.equal('');
     expect(data.update).to.equal('');
     expect(data.body).to.equal(testBody);
+    fs.unlinkSync(testFilePath);
+  });
+
+  it('srcFullPathが返ること', () => {
+    fs.writeFileSync(testFilePath, testString);
+    const data = readMarkdownFile(testFilePath);
+    expect(data.srcFullPath).to.equal(testFilePath);
+    fs.unlinkSync(testFilePath);
+  });
+
+  it('srcFullDirが返ること', () => {
+    fs.writeFileSync(testFilePath, testString);
+    const data = readMarkdownFile(testFilePath);
+    expect(data.srcFullDir).to.equal(__dirname);
+    fs.unlinkSync(testFilePath);
+  });
+
+  it('srcFileNameが返ること', () => {
+    fs.writeFileSync(testFilePath, testString);
+    const data = readMarkdownFile(testFilePath);
+    expect(data.srcFileName).to.equal(testFileName);
     fs.unlinkSync(testFilePath);
   });
 });
