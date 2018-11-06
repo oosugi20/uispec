@@ -10,7 +10,7 @@ describe('FileListDataItem', () => {
       data: { srcFullPath },
       collection: {
         srcRootFullDir: '/projects/project/src',
-        serveDir: '/public/_uispec',
+        serveDir: '/_uispec',
       }
     });
     expect(item).to.be.an.instanceof(FileListDataItem);
@@ -24,7 +24,7 @@ describe('FileListDataItem', () => {
         data: { srcFullPath, testProp },
         collection: {
           srcRootFullDir: '/projects/project/src',
-          serveDir: '/public/_uispec',
+          serveDir: '/_uispec',
         }
       });
       expect(item.get('testProp')).to.equal(testProp);
@@ -38,7 +38,7 @@ describe('FileListDataItem', () => {
         data: { srcFullPath },
         collection: {
           srcRootFullDir: '/projects/project/src',
-          serveDir: '/public/_uispec',
+          serveDir: '/_uispec',
         }
       });
       expect(item.toData()).to.be.an('object');
@@ -51,20 +51,19 @@ describe('FileListDataItem', () => {
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
         });
         expect(item.toData()).to.have.property('serveRelativePath');
       });
 
       it('正しい相対パスが返ること', () => {
-        const serveRootFullDir = '/projects/project/public';
         const srcFullPath = '/projects/project/src/hoge/fuga/var.md';
         const item = new FileListDataItem({
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
         });
         expect(item.toData().serveRelativePath).to.equal('hoge/fuga/var.html');
@@ -78,49 +77,46 @@ describe('FileListDataItem', () => {
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
         });
         expect(item.toData()).to.have.property('depth');
       });
 
       it('正しい数値が返ること(/index.md)', () => {
-        const serveRootFullDir = '/projects/project/public';
         const srcFullPath = '/projects/project/src/index.md';
         const item = new FileListDataItem({
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
         });
         expect(item.toData().depth).to.equal(0);
       });
 
       it('正しい数値が返ること(/hoge/index.md)', () => {
-        const serveRootFullDir = '/projects/project/public';
         const srcFullPath = '/projects/project/src/hoge/index.md';
         const item = new FileListDataItem({
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
         });
         expect(item.toData().depth).to.equal(1);
       });
 
       it('正しい数値が返ること(/hoge/fuga/var.md)', () => {
-        const serveRootFullDir = '/projects/project/public';
         const srcFullPath = '/projects/project/src/hoge/fuga/var.md';
         const item = new FileListDataItem({
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
         });
-        expect(item.toData().depth).to.equal(2);
+        expect(item.toData().depth).to.equal(3);
       });
     });
 
@@ -130,7 +126,7 @@ describe('FileListDataItem', () => {
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
       });
       expect(item.toData()).to.have.property('isIndex');
@@ -142,7 +138,7 @@ describe('FileListDataItem', () => {
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
       });
       expect(item.toData()).to.have.property('title');
@@ -154,7 +150,7 @@ describe('FileListDataItem', () => {
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
       });
       expect(item.toData()).to.have.property('url');
@@ -166,7 +162,7 @@ describe('FileListDataItem', () => {
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
       });
       expect(item.toData()).to.have.property('summary');
@@ -178,7 +174,7 @@ describe('FileListDataItem', () => {
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
       });
       expect(item.toData()).to.have.property('update');
@@ -193,7 +189,7 @@ describe('FileListDataItem', () => {
         data: { srcFullPath },
         collection: {
           srcRootFullDir: '/projects/project/src',
-          serveDir: '/public/_uispec',
+          serveDir: '/_uispec',
         }
       });
       expect(item.isIndex()).to.be.true;
@@ -204,7 +200,7 @@ describe('FileListDataItem', () => {
         data: { srcFullPath },
         collection: {
           srcRootFullDir: '/projects/project/src',
-          serveDir: '/public/_uispec',
+          serveDir: '/_uispec',
         }
       });
       expect(item.isIndex()).to.be.false;
@@ -220,10 +216,10 @@ describe('FileListDataItem', () => {
           data: { srcFullPath },
           collection: {
             srcRootFullDir: '/projects/project/src',
-            serveDir: '/public/_uispec',
+            serveDir: '/_uispec',
           }
         });
-        expect(item.get('servePath')).to.equal('/public/_uispec/hoge/fuga/var.html');
+        expect(item.get('servePath')).to.equal('/_uispec/hoge/fuga/var.html');
       });
     });
   });
