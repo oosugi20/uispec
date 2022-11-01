@@ -14,7 +14,7 @@
   "devDependencies": {
     "autoprefixer": "^9.3.1",
     "ejs": "^2.6.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-consolidate": "^0.2.0",
     "gulp-iconfont": "^10.0.2",
